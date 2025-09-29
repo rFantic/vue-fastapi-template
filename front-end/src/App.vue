@@ -3,23 +3,11 @@ import JournalSearch from './components/JournalSearch.vue'
 </script>
 
 <template>
-  <main class="app-main light-mode">
-    <JournalSearch />
-  </main>
+  <div class="min-h-screen bg-gray-50 flex items-start">
+    <div class="max-w-xl mx-auto mt-10 p-8 bg-white rounded-xl shadow flex flex-col items-center w-full">
+      <img alt="Vue logo" src="./assets/logo.svg" width="125" class="mb-8" />
+      <JournalSearch />
+    </div>
+  </div>
 </template>
-
-<style scoped>
-.app-main {
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-
-/* Allow child to grow full width on large screens */
-.app-main > * {
-  width: 100%;
-}
-</style>
+ 
