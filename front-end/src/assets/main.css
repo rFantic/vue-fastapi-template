@@ -1,34 +1,107 @@
 @import './base.css';
 
+/* App layout */
 #app {
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  padding: var(--space-4);
+  max-width: var(--max-width-5xl);
+  width: 100%;
 }
 
-a,
-.green {
+/* Link styles */
+a {
+  color: var(--color-primary);
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  transition: all 0.2s ease;
+  font-weight: var(--font-medium);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Form elements */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+/* Button styles */
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button[type="submit"],
+.button-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+button[type="submit"]:hover,
+.button-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+button[type="button"],
+.button-secondary {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+button[type="button"]:hover,
+.button-secondary:hover {
+  background: var(--color-gray-200);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive layout */
+@media (min-width: 640px) {
+  #app {
+    padding: var(--space-6);
   }
 }
 
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    padding: var(--space-8);
   }
+}
+
+.form-input {
+  @apply mt-1 w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200;
 }
