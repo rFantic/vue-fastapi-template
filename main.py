@@ -9,11 +9,7 @@ DIST_DIR = os.path.join(os.path.dirname(__file__), ".", "front-end", "dist")
 DIST_DIR = os.path.normpath(DIST_DIR)
 
 if os.path.isdir(DIST_DIR):
-    app.mount("/", StaticFiles(directory=DIST_DIR), name="static")
-
-    @app.get("/", include_in_schema=False)
-    def index():
-        return FileResponse(os.path.join(DIST_DIR, "index.html"))
+    app.mount("/", StaticFiles(directory=DIST_DIR, html=True), name="static")
 else:
     @app.get("/")
     def not_built():
