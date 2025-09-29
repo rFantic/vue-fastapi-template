@@ -35,6 +35,14 @@ npm install
 npm run dev
 ```
 
+### Journal search UI
+
+This project includes a simple journal search UI at the root page. It sends requests to the backend API at `/api/journals/{issn}/works`.
+
+Fill the ISSN (required) and optional parameters (query, from year, sort, order, max items, count, mailto) and click Search. The results are shown on the page as JSON + brief metadata.
+
+If you run the front-end dev server separately from the FastAPI backend, configure a proxy in `vite.config.ts` or run both under the same origin to avoid CORS issues.
+
 ### Type-Check, Compile and Minify for Production
 
 ```sh
